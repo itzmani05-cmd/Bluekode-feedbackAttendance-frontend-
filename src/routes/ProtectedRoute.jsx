@@ -1,8 +1,6 @@
 import { Navigate } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 
-// Guards a route by required role. Redirects to /login if unauthenticated,
-// or to the caller's own dashboard if authenticated but wrong role.
 const ProtectedRoute = ({ role, children }) => {
   const { user, loading } = useAuth();
 

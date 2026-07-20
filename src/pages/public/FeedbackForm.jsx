@@ -10,7 +10,7 @@ const FeedbackForm = () => {
   const { token } = useParams();
   const toast = useToast();
 
-  const [status, setStatus] = useState('loading'); // loading | valid | invalid | submitted
+  const [status, setStatus] = useState('loading');
   const [errorMsg, setErrorMsg] = useState('');
   const [submitting, setSubmitting] = useState(false);
 
@@ -57,7 +57,7 @@ const FeedbackForm = () => {
           <p className="mt-1 text-sm text-primary-100">Your response is completely anonymous</p>
         </div>
 
-        <div className="rounded-2xl bg-white p-8 shadow-2xl">
+        <div className="rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
           {status === 'loading' && <SkeletonCard />}
 
           {status === 'invalid' && (

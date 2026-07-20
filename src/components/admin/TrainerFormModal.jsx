@@ -51,7 +51,7 @@ const TrainerFormModal = ({ open, onClose, onSubmit, initialData }) => {
             onChange={handleChange}
           />
         </div>
-        <div className="flex justify-end gap-3 pt-2">
+        <div className="flex flex-col-reverse justify-end gap-3 pt-2 sm:flex-row">
           <button type="button" className="btn-secondary" onClick={onClose}>
             Cancel
           </button>

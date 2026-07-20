@@ -77,16 +77,16 @@ const AttendanceReports = () => {
               return (
                 <div key={rec._id} className="py-3">
                   <button
-                    className="flex w-full items-center justify-between text-left"
+                    className="flex w-full flex-wrap items-center justify-between gap-2 text-left"
                     onClick={() => setExpanded(isOpen ? null : rec._id)}
                   >
-                    <div>
-                      <p className="text-sm font-medium text-gray-800">{rec.trainer?.name || 'Unknown trainer'}</p>
+                    <div className="min-w-0">
+                      <p className="truncate text-sm font-medium text-gray-800">{rec.trainer?.name || 'Unknown trainer'}</p>
                       <p className="text-xs text-gray-500">
                         {new Date(rec.date).toLocaleDateString()} · {rec.batch}
                       </p>
                     </div>
-                    <div className="flex items-center gap-3">
+                    <div className="flex shrink-0 items-center gap-3">
                       <Badge variant="green">
                         {present}/{rec.students.length} present
                       </Badge>

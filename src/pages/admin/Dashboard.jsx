@@ -78,9 +78,9 @@ const Dashboard = () => {
             {data.recentAttendance.map((rec) => {
               const present = rec.students.filter((s) => s.status === 'present').length;
               return (
-                <div key={rec._id} className="flex items-center justify-between py-3 text-sm">
-                  <div>
-                    <p className="font-medium text-gray-800">{rec.trainer?.name || 'Unknown trainer'}</p>
+                <div key={rec._id} className="flex items-center justify-between gap-3 py-3 text-sm">
+                  <div className="min-w-0">
+                    <p className="truncate font-medium text-gray-800">{rec.trainer?.name || 'Unknown trainer'}</p>
                     <p className="text-xs text-gray-500">
                       {new Date(rec.date).toLocaleDateString()} · {rec.batch}
                     </p>

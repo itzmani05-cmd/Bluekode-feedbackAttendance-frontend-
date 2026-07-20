@@ -73,9 +73,9 @@ const Feedback = () => {
           ? Array.from({ length: 3 }).map((_, i) => <SkeletonCard key={i} />)
           : ratings.map((r) => (
               <Card key={r.trainerId} className="!p-4">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm font-semibold text-gray-800">{r.name}</p>
+                <div className="flex items-center justify-between gap-3">
+                  <div className="min-w-0">
+                    <p className="truncate text-sm font-semibold text-gray-800">{r.name}</p>
                     <p className="text-xs text-gray-500">{r.specialization || 'General'}</p>
                   </div>
                   <StarRating value={Math.round(r.avgRating)} size="h-4 w-4" />

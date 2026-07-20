@@ -1,4 +1,3 @@
-// Generic table: columns = [{ key, header, render?(row) }]
 const Table = ({ columns, rows, keyField = '_id', emptyText = 'No records found' }) => (
   <div className="overflow-x-auto">
     <table className="min-w-full divide-y divide-gray-200 text-sm">

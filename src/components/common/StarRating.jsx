@@ -1,6 +1,5 @@
 import { Star } from 'lucide-react';
 
-// Interactive when onChange is provided, read-only otherwise
 const StarRating = ({ value = 0, onChange, size = 'h-7 w-7' }) => (
   <div className="flex gap-1">
     {[1, 2, 3, 4, 5].map((n) => (

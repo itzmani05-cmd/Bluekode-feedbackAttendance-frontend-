@@ -9,9 +9,6 @@ import { markAttendance, getAttendanceStatus } from '../../api/attendanceService
 
 const todayISO = () => new Date().toISOString().slice(0, 10);
 
-// One batch's checkbox list + submit button. Once its attendance is
-// recorded, the parent stops rendering this and shows a "done" summary
-// instead — so a completed batch's students never reappear as pending.
 const BatchAttendancePanel = ({ batch, students, onSubmitted }) => {
   const [attendance, setAttendance] = useState(() => Object.fromEntries(students.map((s) => [s._id, false])));
   const [submitting, setSubmitting] = useState(false);
@@ -52,21 +49,21 @@ const BatchAttendancePanel = ({ batch, students, onSubmitted }) => {
     }>
       <div className="divide-y divide-gray-100">
         {students.map((s) => (
-          <label key={s._id} className="flex cursor-pointer items-center justify-between py-3">
-            <div>
-              <p className="text-sm font-medium text-gray-800">{s.name}</p>
-              <p className="text-xs text-gray-500">{s.email}</p>
+          <label key={s._id} className="flex cursor-pointer items-center justify-between gap-3 py-3">
+            <div className="min-w-0">
+              <p className="truncate text-sm font-medium text-gray-800">{s.name}</p>
+              <p className="truncate text-xs text-gray-500">{s.email}</p>
             </div>
             <input
               type="checkbox"
-              className="h-5 w-5 rounded border-gray-300 text-primary-600 focus:ring-primary-500"
+              className="h-5 w-5 shrink-0 rounded border-gray-300 text-primary-600 focus:ring-primary-500"
               checked={Boolean(attendance[s._id])}
               onChange={() => toggle(s._id)}
             />
           </label>
         ))}
       </div>
-      <div className="mt-4 flex items-center justify-between border-t border-gray-100 pt-4">
+      <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-gray-100 pt-4">
         <p className="text-sm text-gray-500">
           <span className="font-semibold text-gray-800">{presentCount}</span> / {students.length} marked present
         </p>
@@ -85,7 +82,7 @@ const BatchDoneCard = ({ batch, record }) => {
     <Card>
       <div className="flex items-center gap-4">
         <CheckCircle2 className="h-9 w-9 shrink-0 text-green-500" />
-        <div>
+        <div className="min-w-0">
           <p className="text-sm font-semibold text-gray-800">{batch} — Attendance already submitted</p>
           <p className="text-xs text-gray-500">
             {present} of {record.students.length} students marked present. Feedback emails have been sent.
@@ -98,7 +95,7 @@ const BatchDoneCard = ({ batch, record }) => {
 
 const TrainerDashboard = () => {
   const [students, setStudents] = useState([]);
-  const [completedRecords, setCompletedRecords] = useState([]); // Attendance docs for today, one per finished batch
+  const [completedRecords, setCompletedRecords] = useState([]);
   const [loading, setLoading] = useState(true);
   const toast = useToast();
 

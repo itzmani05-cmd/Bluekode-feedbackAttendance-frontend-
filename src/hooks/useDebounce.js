@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 
-// Debounces a fast-changing value (e.g. a search input) for use in API calls
 const useDebounce = (value, delay = 400) => {
   const [debounced, setDebounced] = useState(value);
 
