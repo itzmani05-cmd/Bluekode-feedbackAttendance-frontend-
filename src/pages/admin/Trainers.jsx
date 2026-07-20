@@ -83,7 +83,7 @@ const Trainers = () => {
       render: (r) => (
         <div className="flex gap-2">
           <button
-            className="rounded-md p-1.5 text-gray-500 hover:bg-gray-100 hover:text-primary-600"
+            className="rounded-md p-2 text-gray-500 hover:bg-gray-100 hover:text-primary-600"
             onClick={() => {
               setEditing(r);
               setModalOpen(true);
@@ -92,7 +92,7 @@ const Trainers = () => {
             <Pencil className="h-4 w-4" />
           </button>
           <button
-            className="rounded-md p-1.5 text-gray-500 hover:bg-red-50 hover:text-red-600"
+            className="rounded-md p-2 text-gray-500 hover:bg-red-50 hover:text-red-600"
             onClick={() => setDeleteTarget(r)}
           >
             <Trash2 className="h-4 w-4" />
@@ -107,7 +107,7 @@ const Trainers = () => {
       <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <h2 className="text-xl font-semibold text-gray-800">Trainers</h2>
         <button
-          className="btn-primary"
+          className="btn-primary w-full sm:w-auto"
           onClick={() => {
             setEditing(null);
             setModalOpen(true);
