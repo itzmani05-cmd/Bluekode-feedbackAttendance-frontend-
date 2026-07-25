@@ -38,6 +38,14 @@ const Dashboard = () => {
     );
   }
 
+  if (!data) {
+    return (
+      <Layout>
+        <p className="py-10 text-center text-sm text-gray-400">Failed to load dashboard data.</p>
+      </Layout>
+    );
+  }
+
   return (
     <Layout>
       <h2 className="mb-5 text-xl font-semibold text-gray-800">Dashboard Overview</h2>
