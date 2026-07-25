@@ -45,17 +45,17 @@ const Sidebar = ({ role, open, onClose }) => {
         <div className="fixed inset-0 z-30 bg-black/50 backdrop-blur-sm lg:hidden" onClick={onClose} aria-hidden="true" />
       )}
       <aside
-        className={`fixed inset-y-0 left-0 z-40 flex w-64 transform flex-col bg-slate-900 text-slate-100 shadow-2xl transition-transform duration-200 ease-in-out lg:static lg:translate-x-0 lg:shadow-none ${
+        className={`fixed inset-y-0 left-0 z-40 flex h-full w-64 transform flex-col bg-slate-900 text-slate-100 shadow-2xl transition-transform duration-200 ease-in-out lg:sticky lg:top-0 lg:h-screen lg:translate-x-0 lg:shadow-none ${
           open ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
         <div className="flex items-center justify-between gap-2 border-b border-white/5 px-5 py-5">
           <div className="flex min-w-0 items-center gap-2.5">
-            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/10 ring-1 ring-white/10">
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white ring-1 ring-white/10">
               <img src={logo} alt="Academy logo" className="h-6 w-6 rounded object-contain" />
             </div>
             <div className="min-w-0 leading-tight">
-              <p className="truncate text-sm font-semibold tracking-wide text-white">Academy</p>
+              <p className="truncate text-sm font-semibold tracking-wide text-white">Bluekode Academy</p>
               <p className="truncate text-[11px] font-medium uppercase tracking-wider text-slate-400">
                 Attendance Portal
               </p>
