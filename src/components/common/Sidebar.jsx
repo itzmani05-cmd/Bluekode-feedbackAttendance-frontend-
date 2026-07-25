@@ -51,7 +51,7 @@ const Sidebar = ({ role, open, onClose }) => {
       >
         <div className="flex items-center justify-between gap-2 border-b border-white/5 px-5 py-5">
           <div className="flex min-w-0 items-center gap-2.5">
-            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white ring-1 ring-white/10">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-white">
               <img src={logo} alt="Academy logo" className="h-6 w-6 rounded object-contain" />
             </div>
             <div className="min-w-0 leading-tight">
