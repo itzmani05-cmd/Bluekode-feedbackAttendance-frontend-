@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { CheckCircle2, XCircle, School } from 'lucide-react';
+import { CheckCircle2, XCircle } from 'lucide-react';
 import StarRating from '../../components/common/StarRating';
 import { SkeletonCard } from '../../components/common/Skeleton';
 import { validateFeedbackToken, submitFeedback } from '../../api/feedbackService';
 import useToast from '../../hooks/useToast';
+import logo from '../../assests/logo.png';
 
 const FeedbackForm = () => {
   const { token } = useParams();
@@ -51,7 +52,7 @@ const FeedbackForm = () => {
       <div className="w-full max-w-lg">
         <div className="mb-6 flex flex-col items-center text-center text-white">
           <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-white/10">
-            <School className="h-6 w-6" />
+            <img src={logo} alt="Academy logo" className="h-8 w-8 rounded object-contain" />
           </div>
           <h1 className="text-xl font-semibold">Anonymous Session Feedback</h1>
           <p className="mt-1 text-sm text-primary-100">Your response is completely anonymous</p>

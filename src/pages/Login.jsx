@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { School, ShieldCheck, GraduationCap } from 'lucide-react';
+import { ShieldCheck, GraduationCap } from 'lucide-react';
 import useAuth from '../hooks/useAuth';
 import useToast from '../hooks/useToast';
+import logo from '../assests/logo.png';
 
 const Login = () => {
   const [role, setRole] = useState('admin');
@@ -32,7 +33,7 @@ const Login = () => {
       <div className="w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
         <div className="mb-6 flex flex-col items-center text-center">
           <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-primary-600 text-white">
-            <School className="h-6 w-6" />
+            <img src={logo} alt="Academy logo" className="h-8 w-8 rounded object-contain" />
           </div>
           <h1 className="text-xl font-semibold text-gray-900">Academy Attendance</h1>
           <p className="mt-1 text-sm text-gray-500">Sign in to continue</p>
